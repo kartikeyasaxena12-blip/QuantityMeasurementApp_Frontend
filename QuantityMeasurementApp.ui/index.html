@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quantity Measurement</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <h1>Welcome To Quantity Measurement</h1>
+</header>
+
+<main>
+  <div class="card">
+
+    <!-- CHOOSE TYPE -->
+    <div class="section-label">Choose Type</div>
+    <div class="type-grid">
+      <button class="type-btn active" data-type="LengthUnit">
+        <span class="icon">✏️</span><span class="label">Length</span>
+      </button>
+      <button class="type-btn" data-type="WeightUnit">
+        <span class="icon">⚖️</span><span class="label">Weight</span>
+      </button>
+      <button class="type-btn" data-type="TemperatureUnit">
+        <span class="icon">🌡️</span><span class="label">Temperature</span>
+      </button>
+      <button class="type-btn" data-type="VolumeUnit">
+        <span class="icon">🧊</span><span class="label">Volume</span>
+      </button>
+    </div>
+
+    <!-- CHOOSE ACTION -->
+    <div class="section-label">Choose Action</div>
+    <div class="action-tabs">
+      <button class="action-tab active" data-action="comparison">Comparison</button>
+      <button class="action-tab" data-action="conversion">Conversion</button>
+      <button class="action-tab" data-action="arithmetic">Arithmetic</button>
+    </div>
+
+    <!-- COMPARISON PANEL -->
+    <div id="panel-comparison">
+      <div class="input-row two-col">
+        <div class="field-group">
+          <label>From</label>
+          <input type="number" id="cmp-val1" value="1" step="any"/>
+          <select id="cmp-unit1"></select>
+        </div>
+        <div class="operator">=</div>
+        <div class="field-group">
+          <label>To</label>
+          <input type="number" id="cmp-val2" value="1000" step="any"/>
+          <select id="cmp-unit2"></select>
+        </div>
+      </div>
+      <div class="result-box" id="cmp-result-box">
+        <div class="result-label">Result</div>
+        <div class="result-value" id="cmp-result-value">—</div>
+      </div>
+      <button class="calc-btn" id="cmp-btn">Compare</button>
+    </div>
+
+    <!-- CONVERSION PANEL -->
+    <div id="panel-conversion" style="display:none">
+      <div class="input-row two-col">
+        <div class="field-group">
+          <label>From</label>
+          <input type="number" id="conv-val1" value="1" step="any"/>
+          <select id="conv-unit1"></select>
+        </div>
+        <div class="operator">→</div>
+        <div class="field-group">
+          <label>To Unit</label>
+          <select id="conv-unit2" style="margin-top:24px"></select>
+        </div>
+      </div>
+      <div class="result-box" id="conv-result-box">
+        <div class="result-label">Result</div>
+        <div class="result-value" id="conv-result-value">—</div>
+      </div>
+      <button class="calc-btn" id="conv-btn">Convert</button>
+    </div>
+
+    <!-- ARITHMETIC PANEL -->
+    <div id="panel-arithmetic" style="display:none">
+      <div class="arith-ops">
+        <button class="arith-op-btn active" data-op="add">+ Add</button>
+        <button class="arith-op-btn" data-op="subtract">− Subtract</button>
+        <button class="arith-op-btn" data-op="divide">÷ Divide</button>
+      </div>
+      <div class="input-row two-col">
+        <div class="field-group">
+          <label>Value 1</label>
+          <input type="number" id="arith-val1" value="1" step="any"/>
+          <select id="arith-unit1"></select>
+        </div>
+        <div class="operator" id="arith-op-symbol">+</div>
+        <div class="field-group">
+          <label>Value 2</label>
+          <input type="number" id="arith-val2" value="1" step="any"/>
+          <select id="arith-unit2"></select>
+        </div>
+      </div>
+      <div class="result-box" id="arith-result-box">
+        <div class="result-label">Result</div>
+        <div class="result-row">
+          <div class="result-value" id="arith-result-value">—</div>
+          <select id="arith-result-unit"></select>
+        </div>
+      </div>
+      <button class="calc-btn" id="arith-btn">Calculate</button>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>Welcome To Quantity Measurement</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
